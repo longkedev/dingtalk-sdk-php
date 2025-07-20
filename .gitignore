@@ -1,0 +1,64 @@
+# 排除文档目录
+docs/
+
+# Composer
+/vendor/
+composer.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Cache
+cache/
+*.cache
+
+# Temporary files
+tmp/
+temp/
+
+# Build outputs
+build/
+dist/
+
+# PHP specific
+*.php~
+.phpunit.result.cache

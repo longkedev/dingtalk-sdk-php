@@ -1,0 +1,106 @@
+{
+    "name": "longkedev/dingtalk-sdk-php",
+    "description": "一个功能完整、易于使用的钉钉开放平台 PHP SDK，支持用户管理、部门管理、消息推送、媒体文件管理、考勤管理等核心功能",
+    "type": "library",
+    "keywords": ["dingtalk", "sdk", "php", "api", "enterprise", "钉钉", "开放平台"],
+    "homepage": "https://github.com/longkedev/dingtalk-sdk-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "longkedev",
+            "email": "longkedev@gmail.com",
+            "homepage": "https://github.com/longkedev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "guzzlehttp/guzzle": "^7.0",
+        "psr/log": "^1.1|^2.0|^3.0",
+        "psr/cache": "^1.0|^2.0|^3.0",
+        "psr/container": "^1.0|^2.0",
+        "symfony/cache": "^5.0|^6.0|^7.0",
+        "monolog/monolog": "^2.0|^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0|^10.0|^11.0",
+        "phpstan/phpstan": "^1.0",
+        "squizlabs/php_codesniffer": "^3.6",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "mockery/mockery": "^1.4",
+        "symfony/var-dumper": "^5.0|^6.0|^7.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpstan/phpstan-mockery": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DingTalk\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DingTalk\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-unit": "phpunit tests/Unit",
+        "test-integration": "phpunit tests/Integration",
+        "test-feature": "phpunit tests/Feature",
+        "test-coverage": "phpunit --coverage-html coverage --coverage-text",
+        "test-coverage-clover": "phpunit --coverage-clover coverage.xml",
+        "cs-check": "phpcs --standard=PSR12 src/ tests/",
+        "cs-fix": "phpcbf --standard=PSR12 src/ tests/",
+        "phpstan": "phpstan analyse src tests --level=8",
+        "php-cs-fixer": "php-cs-fixer fix --dry-run --diff",
+        "php-cs-fixer-fix": "php-cs-fixer fix",
+        "quality": [
+            "@cs-check",
+            "@phpstan",
+            "@test"
+        ],
+        "fix": [
+            "@cs-fix",
+            "@php-cs-fixer-fix"
+        ]
+    },
+    "scripts-descriptions": {
+        "test": "运行所有测试",
+        "test-unit": "运行单元测试",
+        "test-integration": "运行集成测试",
+        "test-feature": "运行功能测试",
+        "test-coverage": "运行测试并生成覆盖率报告",
+        "cs-check": "检查代码风格",
+        "cs-fix": "修复代码风格",
+        "phpstan": "运行静态分析",
+        "quality": "运行所有质量检查",
+        "fix": "修复所有可自动修复的问题"
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "support": {
+        "issues": "https://github.com/longkedev/dingtalk-sdk-php/issues",
+        "source": "https://github.com/longkedev/dingtalk-sdk-php",
+        "docs": "https://github.com/longkedev/dingtalk-sdk-php/blob/main/README.md"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/longkedev"
+        }
+    ]
+}

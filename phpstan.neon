@@ -1,0 +1,18 @@
+parameters:
+    level: 8
+    paths:
+        - src
+        - tests
+    excludePaths:
+        - tests/bootstrap.php
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        - '#Call to an undefined method [a-zA-Z0-9\\_]+::extend\(\)#'
+        - '#Access to an undefined property [a-zA-Z0-9\\_]+::\$[a-zA-Z0-9_]+#'
+        - '#Cannot call method [a-zA-Z0-9_]+\(\) on mixed#'
+        - '#Parameter \#[0-9]+ \$[a-zA-Z0-9_]+ of method [a-zA-Z0-9\\_]+::[a-zA-Z0-9_]+\(\) expects [a-zA-Z0-9\\_|]+, mixed given#'
+        - '#Method [a-zA-Z0-9\\_]+::[a-zA-Z0-9_]+\(\) should return [a-zA-Z0-9\\_|]+( but returns mixed)?#'
+    tmpDir: build/phpstan
+    editorUrl: 'phpstorm://open?file=%%file%%&line=%%line%%'

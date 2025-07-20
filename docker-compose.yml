@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  # PHP 8.0 环境
+  php80:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PHP_VERSION: "8.0"
+    container_name: dingtalk-sdk-php80
+    volumes:
+      - .:/app
+      - ./coverage:/app/coverage
+    working_dir: /app
+    command: tail -f /dev/null
+
+  # PHP 8.1 环境
+  php81:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PHP_VERSION: "8.1"
+    container_name: dingtalk-sdk-php81
+    volumes:
+      - .:/app
+      - ./coverage:/app/coverage
+    working_dir: /app
+    command: tail -f /dev/null
+
+  # PHP 8.2 环境
+  php82:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PHP_VERSION: "8.2"
+    container_name: dingtalk-sdk-php82
+    volumes:
+      - .:/app
+      - ./coverage:/app/coverage
+    working_dir: /app
+    command: tail -f /dev/null
+
+  # PHP 8.3 环境
+  php83:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PHP_VERSION: "8.3"
+    container_name: dingtalk-sdk-php83
+    volumes:
+      - .:/app
+      - ./coverage:/app/coverage
+    working_dir: /app
+    command: tail -f /dev/null
+
+  # Redis (用于缓存测试)
+  redis:
+    image: redis:7-alpine
+    container_name: dingtalk-sdk-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+
+  # 文档服务器
+  docs:
+    image: nginx:alpine
+    container_name: dingtalk-sdk-docs
+    ports:
+      - "8080:80"
+    volumes:
+      - ./docs:/usr/share/nginx/html:ro
+    depends_on:
+      - php81
+
+volumes:
+  redis_data:
+
+networks:
+  default:
+    name: dingtalk-sdk-network

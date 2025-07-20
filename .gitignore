@@ -1,0 +1,48 @@
+# Composer
+vendor/
+composer.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Cache
+.cache/
+.tmp/
+.temp/
+
+# Build outputs
+build/
+dist/
+out/
+
+# PHP specific
+*.cache
+.phpunit.result.cache
+
+# Documentation (excluded as requested)
+docs/

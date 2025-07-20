@@ -1,6 +1,3 @@
-# 排除文档目录
-docs/
-
 # Composer
 /vendor/
 composer.lock
@@ -24,6 +21,9 @@ Thumbs.db
 # Logs
 *.log
 logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Runtime data
 pids
@@ -50,6 +50,9 @@ node_modules/
 # Cache
 cache/
 *.cache
+.cache/
+.tmp/
+.temp/
 
 # Temporary files
 tmp/
@@ -58,7 +61,11 @@ temp/
 # Build outputs
 build/
 dist/
+out/
 
 # PHP specific
 *.php~
 .phpunit.result.cache
+
+# Storage directory
+storage/

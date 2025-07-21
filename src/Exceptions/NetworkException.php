@@ -50,6 +50,7 @@ class NetworkException extends DingTalkException
             "Connection timeout after {$timeout} seconds",
             self::CONNECTION_TIMEOUT,
             ['timeout' => $timeout],
+            0,
             $previous
         );
     }
@@ -63,6 +64,7 @@ class NetworkException extends DingTalkException
             "Read timeout after {$timeout} seconds",
             self::READ_TIMEOUT,
             ['timeout' => $timeout],
+            0,
             $previous
         );
     }
@@ -76,6 +78,7 @@ class NetworkException extends DingTalkException
             "DNS resolution failed for host: {$host}",
             self::DNS_RESOLUTION_FAILED,
             ['host' => $host],
+            0,
             $previous
         );
     }
@@ -89,6 +92,7 @@ class NetworkException extends DingTalkException
             "Connection refused to {$host}:{$port}",
             self::CONNECTION_REFUSED,
             ['host' => $host, 'port' => $port],
+            0,
             $previous
         );
     }
@@ -102,6 +106,7 @@ class NetworkException extends DingTalkException
             "SSL/TLS error: {$message}",
             self::SSL_ERROR,
             ['ssl_message' => $message],
+            0,
             $previous
         );
     }
@@ -115,6 +120,7 @@ class NetworkException extends DingTalkException
             "Network unreachable: {$host}",
             self::NETWORK_UNREACHABLE,
             ['host' => $host],
+            0,
             $previous
         );
     }
